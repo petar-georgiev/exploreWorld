@@ -37,9 +37,9 @@ public class CommentServiceImpl implements CommentService {
                         "Route with id " + commentServiceModel.getRouteId() + " not found!"));
 
         var author = userRepository
-                .findByUsername(commentServiceModel.getCreator())
+                .findByEmail(commentServiceModel.getCreator())
                 .orElseThrow(() -> new ObjectNotFoundException(
-                        "User with username " + commentServiceModel.getCreator() + " not found!"));
+                        "User with email " + commentServiceModel.getCreator() + " not found!"));
 
 
         Comment comment = new Comment();

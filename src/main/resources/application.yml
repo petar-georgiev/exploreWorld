@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://${MYSQL_HOST:localhost}:3306/${MYSQL_DATABASE}?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
     username: root
-    password: my-secret-pw
+    password: toor
   servlet:
     multipart:
       max-file-size: 1MB

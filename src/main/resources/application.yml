@@ -5,7 +5,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://${MYSQL_HOST:localhost}:3306/${MYSQL_DATABASE}?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
     username: root
-    password:
+    password: toor
   servlet:
     multipart:
       max-file-size: 1MB
@@ -15,9 +15,9 @@ spring:
       filter:
         enabled: true
 
-  sql:
-    init:
-      mode: always
+#  sql:
+#    init:
+#      mode: always
   jpa:
     # Choose either MySQL 8 or MySQL 5 below
     # For MySQL 8
@@ -35,4 +35,12 @@ spring:
 #cloudinary:
   #api-key: 
   #api-secret: 
-  #cloud-name: 
+  #cloud-name:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]
+      base-path: "/admin"
+  server:
+    port: 8081
